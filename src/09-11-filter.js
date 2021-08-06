@@ -1,5 +1,8 @@
-const numberList = [1, 3, 5, 2, 7];
+let numberList = [1, 3, 5, 2, 7];
+// ! => Hàm filter nó tạo ra một mảng mới luôn, không liên quan đến mảng cũ
 numberList.filter((x) => x % 2 === 0); // [2]
+console.log(numberList); // [1, 3, 5, 2, 7] vẫn giữ nguyên
+
 numberList.filter((x) => x > 2); // [3, 5, 7]
 numberList.filter((x) => x <= 10 || x % 5 === 0); // [5]
 
