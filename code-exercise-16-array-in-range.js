@@ -17,7 +17,7 @@
 // using for...i
 function createArrayInRangeV1(a, b) {
     // your code here
-    if (-100 >= a || a >= b || b >= 100) return undefined;
+    if (a > b || a <= -100 || b >= 100) return -1;
 
     let arr = [];
 
@@ -31,10 +31,20 @@ function createArrayInRangeV1(a, b) {
 // using Array.from()
 function createArrayInRangeV2(a, b) {
     // your code here
-    if (-100 >= a || a >= b || b >= 100) return undefined;
+    if (a > b || a <= -100 || b >= 100) return -1;
 
     const range = (start, stop, step) =>
         Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + i * step);
 
     return range(a, b, 1);
 }
+
+function createArrayInRangeV2(a, b) {
+    if (a > b || a <= -100 || b >= 100 || arguments.length < 2) return -1;
+
+    return Array.from({ length: b - a + 1 }, (item, index) => {
+        return index + a;
+    });
+}
+
+console.log(createArrayInRangeV2(-2, 2));
