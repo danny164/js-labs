@@ -18,8 +18,8 @@
 ['frontend'].includes('easy'); // false
 
 // every v1
-function checkIfAllEven(numberList) {
-    if (!Array.isArray(numberList)) return false;
+export function checkIfAllEvenV1(numberList) {
+    if (!Array.isArray(numberList) || numberList.length === 0) return false;
 
     let isValid = true;
 
@@ -34,12 +34,12 @@ function checkIfAllEven(numberList) {
     return isValid;
 }
 
-console.log(checkIfAllEven([2, 1, 3]));
-console.log(checkIfAllEven([2, 4, 6]));
+// console.log(checkIfAllEven([2, 1, 3]));
+// console.log(checkIfAllEven([2, 4, 6]));
 
 // every v2
-function checkIfAllEven(numberList) {
-    if (!Array.isArray(numberList)) return false;
+export function checkIfAllEvenV2(numberList) {
+    if (!Array.isArray(numberList) || numberList.length === 0) return false;
 
     for (let i = 0; i < numberList.length; i++) {
         if (numberList[i] % 2 !== 0) return false;
@@ -48,5 +48,5 @@ function checkIfAllEven(numberList) {
     return true;
 }
 
-console.log(checkIfAllEven([2, 1, 3]));
-console.log(checkIfAllEven([2, 4, 6]));
+// console.log(checkIfAllEven([2, 1, 3]));
+// console.log(checkIfAllEven([2, 4, 6]));
